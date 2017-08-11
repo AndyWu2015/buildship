@@ -14,8 +14,10 @@ import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Link;
 
@@ -47,6 +49,11 @@ public final class GradleProjectSettingsComposite extends Composite {
 
     private GradleProjectSettingsComposite(Composite parent, boolean hasOverrideCheckbox, String overrideCheckboxLabel, String configureParentPrefsLinkLabel) {
         super(parent, SWT.NONE);
+
+        //Display display = Display.getCurrent();
+        //Color blue = display.getSystemColor(SWT.COLOR_BLUE);
+
+        setBackground(parent.getParent().getBackground());
 
         this.overrideCheckboxLabel = overrideCheckboxLabel;
         this.configureParentPrefsLinkLabel = configureParentPrefsLinkLabel;
